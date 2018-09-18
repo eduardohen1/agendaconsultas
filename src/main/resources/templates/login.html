@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Sistema de agendamento de consultas</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" th:href="@{/layout/css/bootstrap.css}"/>
+  <link rel="stylesheet" type="text/css" th:href="@{/layout/css/ie10-viewport-bug-workaround.css}"/>
+  <link rel="stylesheet" type="text/css" th:href="@{/layout/css/signin.css}"/>  
+  
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+	
+	
+	<div class="container">
+		
+      <form class="form-signin" th:action="@{/login}" method="POST">
+        <h2 class="form-signin-heading">Entrar no sistema</h2>
+        <label for="username" class="sr-only">Usuário</label>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Usuário" required autofocus>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Senha" required>        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+      </form>
+
+    </div> <!-- /container -->
+	
+	<div class="alert alert-danger fade in alert-dismissible" th:if="${#bools.isTrue(param.error)}">
+	  <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">&times;</a>
+	  <strong>Atenção!</strong> O usuário e/ou senha não conferem.
+	</div>
+	
+	<script th:src="@{/layout/js/bootstrap.js}"></script>
+	<script th:src="@{/layout/js/ie-emulation-modes-warning.js}"></script>
+	<script th:src="@{/layout/js/ie10-viewport-bug-workaround.js}"></script>	
+</body>
+</html>
+
+</html>
