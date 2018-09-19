@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html 
+<html
+	lang="pt-br" 
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:th="http://www.thymeleaf.org">
@@ -13,7 +14,11 @@
   
   <link rel="stylesheet" type="text/css" th:href="@{/layout/css/bootstrap.css}"/>
   <link rel="stylesheet" type="text/css" th:href="@{/layout/css/ie10-viewport-bug-workaround.css}"/>
-  <link rel="stylesheet" type="text/css" th:href="@{/layout/css/signin.css}"/>  
+  <link rel="stylesheet" type="text/css" th:href="@{/layout/css/font-awesome.min.css}"/>
+  <link rel="stylesheet" type="text/css" th:href="@{/layout/css/form-elements.css}"/>
+  <link rel="stylesheet" type="text/css" th:href="@{/layout/css/style.css}"/>  
+  
+  <link rel="shortcut icon" th:href="@{/layout/images/favicon.png}">
   
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,18 +31,46 @@
 <body>
 	
 	
-	<div class="container">
-		
-      <form class="form-signin" th:action="@{/login}" method="POST">
-        <h2 class="form-signin-heading">Entrar no sistema</h2>
-        <label for="username" class="sr-only">Usuário</label>
-        <input type="text" id="username" name="username" class="form-control" placeholder="Usuário" required autofocus>
-        <label for="inputPassword" class="sr-only">Senha</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="Senha" required>        
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-      </form>
+	<div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Sistema de agendamento de consultas</h3>
+                            		<p>Digite seu Usuário e Senha:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<!-- <i class="fa fa-key"></i> -->
+                        			<span class="glyphicon glyphicon-user"></span>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" th:action="@{/login}" method="POST" class="login-form">
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="form-username">Usuário</label>
+			                        	<input type="text" name="username" id="username" placeholder="Usuário..." class="form-username form-control">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-password">Senha</label>
+			                        	<input type="password" name="password" placeholder="Senha..." class="form-password form-control" id="password">
+			                        </div>
+			                        <button type="submit" class="btn">Entrar!</button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+            
+        </div>
 
-    </div> <!-- /container -->
 	
 	<div class="alert alert-danger fade in alert-dismissible" th:if="${#bools.isTrue(param.error)}">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">&times;</a>
@@ -46,7 +79,9 @@
 	
 	<script th:src="@{/layout/js/bootstrap.js}"></script>
 	<script th:src="@{/layout/js/ie-emulation-modes-warning.js}"></script>
-	<script th:src="@{/layout/js/ie10-viewport-bug-workaround.js}"></script>	
+	<script th:src="@{/layout/js/ie10-viewport-bug-workaround.js}"></script>
+	<script th:src="@{/layout/js/jquery.backstretch.min.js}"></script>
+	<script th:src="@{/layout/js/scripts.js}"></script>	
 </body>
 </html>
 
