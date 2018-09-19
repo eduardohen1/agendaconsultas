@@ -7,12 +7,11 @@ import org.springframework.security.core.userdetails.User;
 
 @Controller
 public class WebController {
-	@RequestMapping("/login")	
+	@RequestMapping(value={"/login"})
 	public String login(@AuthenticationPrincipal User user) {
 		if(user != null) {
 			return "redirect:/principal";
-		}
-		System.out.println(">> passou");
+		}		
 		return "login";
 	}
 }
